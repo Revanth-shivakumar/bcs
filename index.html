@@ -1,0 +1,29 @@
+<!doctype html>
+<title>Python Flask File Upload Example</title>
+<h2>Select a file to upload</h2>
+<form method="post" action="/predict" enctype="multipart/form-data">
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+ <script>
+async function fetchposts(){
+        const response=fetch("http://localhost:2000/predict",{
+            method:POST
+        }
+        );
+        return response.json;
+    }
+    async function displayData(displayContainerID){
+      const displayId=document.getElementById(displayContainerID);
+      if(!displayContainerID){
+        return;
+      }
+      const post=await fetchposts();
+    }   
+
+
+    </script>
+</form>
